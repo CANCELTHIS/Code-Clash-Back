@@ -63,8 +63,8 @@ io.of("/arena").on("connection", (socket) => {
         // Add both players
         const mongoose = require("mongoose");
         arena.participants.push(
-          { userId: new mongoose.Types.ObjectId(player1.userId) },
-          { userId: new mongoose.Types.ObjectId(player2.userId) }
+          { userId: new mongoose.Types.ObjectId(String(player1.userId)) },
+          { userId: new mongoose.Types.ObjectId(String(player2.userId)) }
         );
         arena.status = "active";
         arena.startTime = new Date();
